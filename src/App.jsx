@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Home from "./Pages/Home";
+
+import { Route, Routes } from "react-router-dom";
+
+import Public from "./Routes/Public";
+
+import NotFound from "./pages/NotFound";
+import Blogdetails from "./Pages/Blogdetails";
+import Category from "./Pages/Category";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        {/* Routes for the public pages */}
+
+        <Route element={<Public />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog-details" element={<Blogdetails />} />
+
+          <Route path="/category" element={<Category />} />
+          {/* <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} /> */}
+
+          {/*  
+            <Route path="/password-reset" element={<PasswordReset />} />
+            <Route path="/set-new-password" element={<ResetPassword />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
+            <Route path="/ui" element={<UI />} /> */}
+        </Route>
+        {/* <Route element={<Private />}>
+          <Route element={<MainDashboardLayout />}>
+            <Route path="/dashboard" element={<AdminDashboard />}>
+              <Route index element={<Navigate replace to="dashboard" />} />
+              <Route path="/dashboard/home-admin" element={<Dashboard />} />
+              <Route path="/dashboard/order-home" element={<Dashboard />} />
+            </Route>
+          
+           
+          </Route>
+        </Route> */}
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

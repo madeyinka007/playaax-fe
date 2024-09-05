@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-Poppins;
+}
+/* @font-face {
+  font-family: "Poppins";
+  src: local("src/assets/fonts/Poppins-Black.ttf") format("truetype");
+} */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("src/assets/fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("src/assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("src/assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("src/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("src/assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("src/assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("src/assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+p,
+span,
+strong,
+li,
+label,
+input {
+  @apply font-Poppins not-italic;
+}
+
+/* 
+@media (max-width: 767px) {
+  .tp-slider-area .slider-pagination {
+    margin-bottom: 10px;
+  }
+}
+
+ */
+.slider-pagination {
+  @apply absolute left-1/2 bottom-[1%] -translate-x-1/2 -translate-y-1/2 z-30;
+}
+.tp-slider-area .slider-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  /* display: inline-block; */
+  border-radius: 999px;
+  background: #fff;
+  /* @apply bg-white; */
+  margin: 0 4px;
+  opacity: 0.9;
+}
+
+.tp-slider-area .slider-pagination .swiper-pagination-bullet-active {
+  width: 40px;
+  @apply bg-primary-800;
+  opacity: 1;
+}
+
+@media (max-width: 467px) {
+  .slider-pagination {
+    @apply absolute left-1/2 bottom-[-3%] -translate-x-1/2 -translate-y-1/2 z-30;
+  }
+  .tp-slider-area .slider-pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+  }
+
+  .tp-slider-area .slider-pagination .swiper-pagination-bullet-active {
+    width: 24px;
+    @apply bg-primary-800;
+    opacity: 1;
+  }
+}
