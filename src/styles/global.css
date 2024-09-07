@@ -83,6 +83,27 @@ input {
 }
 
  */
+
+/* CSS for scrollbar */
+
+/* width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 3px; /* Width of the scrollbar */
+  height: 10px; /* Height of the scrollbar */
+}
+
+/* style of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  /*background-color: gray;  Color of the thumb */
+  @apply bg-gray-300;
+  border-radius: 5px; /* Radius of the thumb */
+}
+
+/* style of the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the track */
+}
+
 .slider-pagination {
   @apply absolute left-1/2 bottom-[1%] -translate-x-1/2 -translate-y-1/2 z-30;
 }
@@ -117,4 +138,34 @@ input {
     @apply bg-primary-800;
     opacity: 1;
   }
+}
+
+/* Text Editor css */
+.editor-icons {
+  @apply text-gray-700 border  border-gray-700 hover:bg-gray-900 hover:text-white outline-none font-medium rounded-lg text-sm p-1.5 text-center inline-flex items-center;
+}
+
+.is-active {
+  @apply border  border-gray-700 bg-gray-900 text-white outline-none font-medium rounded-lg text-sm p-1.5 text-center inline-flex items-center;
+}
+.ProseMirror {
+  @apply !border  !border-gray-300 rounded-xl p-5 outline-none min-h-80;
+}
+
+.ProseMirror > ul {
+  @apply list-disc;
+}
+
+.ProseMirror > ol {
+  @apply list-decimal;
+}
+
+blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-left: 4px solid #070707;
+  padding-left: 10px;
 }

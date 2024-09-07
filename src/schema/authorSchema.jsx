@@ -1,12 +1,12 @@
 import * as yup from "yup";
 
-export const categorySchema = yup
+export const authorSchema = yup
   .object({
-    label: yup
+    name: yup
       .string()
-      .required("Category name is required")
+      .required("Full name is required")
       .min(3, "Minimum 3 characters length"),
-    description: yup.string().required("Category description is required"),
+    profile: yup.string().required("Profile description is required"),
 
     // email: yup
     //   .string()
