@@ -66,7 +66,7 @@ export default function CustomSelect({
                   >
                     {selected === null || selected === undefined
                       ? defaultValue?.name || placeholder
-                      : selected?.name || selected?.title}
+                      : selected?.name || selected?.title || selected?.label}
                   </span>
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
@@ -87,7 +87,12 @@ export default function CustomSelect({
                 <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                   {data?.map((person) => (
                     <Listbox.Option
-                      key={person.id || person?.name || person.title}
+                      key={
+                        person.id ||
+                        person?.name ||
+                        person?.title ||
+                        person?.label
+                      }
                       className={({ active }) =>
                         classNames(
                           active
@@ -121,7 +126,7 @@ export default function CustomSelect({
                                 "ml-3 block truncate "
                               )}
                             >
-                              {person?.name || person?.title}
+                              {person?.name || person?.title || person?.label}
                             </span>
                           </div>
 
