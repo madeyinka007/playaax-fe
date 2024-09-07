@@ -7,7 +7,7 @@ const Category = () => {
       >
         <div className="flex flex-col flex-grow">
           <div className="space-y-5 mb-4">
-            <span className="nc-Badge inline-flex px-2.5 py-1 rounded-full font-medium text-xs relative text-blue-800 bg-blue-100  relative">
+            <span className="nc-Badge inline-flex px-2.5 py-1 rounded-full font-medium text-xs relative text-blue-800 bg-blue-100  ">
               Life
             </span>
             <div>
