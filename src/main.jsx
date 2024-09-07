@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+// import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./styles/swiper-bundle.css";
@@ -6,11 +6,17 @@ import "./styles/global.css";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
+import store from "./Redux/store";
+import { Provider } from "react-redux";
+
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
       <Toaster />
     </BrowserRouter>
-  </StrictMode>
+  </Provider>
+
+  //   </StrictMode>
 );
