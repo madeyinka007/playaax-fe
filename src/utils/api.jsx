@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 // Define base URL
-const baseURL = "apit";
+const baseURL = "https://bi08fsi8i7.execute-api.us-east-1.amazonaws.com/api/";
 // Create an Axios instance with default configurations
 const axiosInstance = axios.create({
   baseURL,
@@ -11,11 +11,13 @@ const axiosInstance = axios.create({
 // Add request interceptor to add token to headers
 axiosInstance.interceptors.request.use(
   async (config) => {
-    const token = Cookies.get("admin_token");
-    const userToken = Cookies.get("user_token");
-    // console.log("token given", userToken);
-    if (token || userToken) {
-      config.headers.Authorization = `Bearer ${token || userToken}`;
+    const playaax_token = Cookies.get("playaax_admin_token");
+    const playaax_userToken = Cookies.get("playaax_user_token");
+    // console.log("token given", playaax_userToken);
+    if (playaax_token || playaax_userToken) {
+      config.headers.Authorization = `Bearer ${
+        playaax_token || playaax_userToken
+      }`;
     }
     return config;
   },
